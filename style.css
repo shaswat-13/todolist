@@ -1,0 +1,193 @@
+:root {
+  --bg-main: #eaf7ee; /* page background */
+  --card-bg: #f6fffa; /* app container */
+  --primary: #7ccf9b; /* main green */
+  --primary-dark: #5fb884; /* hover / active */
+  --accent: #b6e2c6; /* soft accents */
+  --text-main: #2f4f3a; /* primary text */
+  --text-muted: #6b8f78; /* secondary text */
+  --border-soft: #cfe8d8; /* subtle borders */
+  --danger: #e57373; /* soft pastel red */
+  --danger-dark: #d65c5c; /* pressed / hover red */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 50px;
+  background-color: var(--bg-main);
+  font-family: "Quicksand", sans-serif;
+  color: var(--text-main);
+}
+
+input,
+button,
+textarea {
+  font-family: "Quicksand", sans-serif;
+}
+
+/* App Card */
+.app {
+  background-color: var(--card-bg);
+  width: 100%;
+  max-width: 500px;
+  padding: 24px;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Title */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+/* Input Section */
+.task-input-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#input-area {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid var(--border-soft);
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+}
+
+#input-area:focus {
+  border-color: var(--primary);
+}
+
+/* Buttons */
+button {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--primary);
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease,
+    background-color 0.2s ease;
+  font-weight: 600;
+  box-shadow: 0 4px 0 var(--primary-dark);
+}
+
+/* Button press effect */
+button:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 var(--primary-dark);
+}
+
+button:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Task List */
+.task-list {
+  list-style: none;
+}
+
+/* Individual Task */
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  margin-bottom: 8px;
+  background-color: var(--accent);
+  border-radius: 8px;
+}
+
+span {
+  flex: 1;
+  margin: 0 10px;
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+
+/* Completed Task */
+.completed span {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+/* Footer Buttons */
+.special-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.special-buttons button {
+  flex: 1;
+}
+
+.delete-btn,
+#delete-all-btn,
+#delete-completed-btn {
+  background-color: var(--danger);
+  box-shadow: 0 4px 0 var(--danger-dark);
+  font-weight: 600;
+}
+
+.delete-btn:hover,
+#delete-all-btn:hover,
+#delete-completed-btn:hover {
+  background-color: var(--danger-dark);
+}
+
+.delete-btn:active,
+#delete-all-btn:active,
+#delete-completed-btn:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 var(--danger-dark);
+}
+
+/* checkbox styling */
+.toggle-check {
+  appearance: none; 
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--primary);
+  border-radius: 6px;
+  background-color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.toggle-check:checked {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.toggle-check:checked::after {
+  content: "";
+  position: absolute;
+  /* Making a small 'L' shape and rotating it */
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 3px 3px 0; 
+  transform: rotate(45deg);
+  margin-bottom: 2px;
+}
