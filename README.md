@@ -40,9 +40,9 @@ https://shaswat-13.github.io/todolist/
 ## Screenshot
 
 
-```
+
 ![To Do List App Screenshot](todolist.png)
-```
+
 
 ---
 
@@ -54,8 +54,7 @@ todolist/
 ├── index.html
 ├── style.css
 ├── script.js
-├── assets/
-│   └── todolist-screenshot.png
+├── todolist.png
 └── README.md
 ```
 
